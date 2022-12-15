@@ -8,8 +8,9 @@ const server = net.createServer((c) => {
   // Handle connection
   console.log('server working')
   
-  c.write('hello\r\n');
-  c.pipe(c);
+  c.write('+PONG\r\n');
+  // c.pipe(c);
 });
+
 
 server.listen(6379, "127.0.0.1");
