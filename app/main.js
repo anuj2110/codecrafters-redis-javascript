@@ -7,8 +7,10 @@ console.log("Logs from your program will appear here!");
 const server = net.createServer((c) => {
   // Handle connection
   console.log('server working')
+  c.on('data',()=>{
+    c.write('+PONG\r\n');
+  })
   
-  c.write('+PONG\r\n');
   // c.pipe(c);
 });
 
